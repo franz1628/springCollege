@@ -3,14 +3,10 @@ package com.example.inicio.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-
-import com.example.inicio.dto.genero.GeneroDto;
 import com.example.inicio.dto.tipoDocumento.TipoDocumentoCreateDto;
 import com.example.inicio.dto.tipoDocumento.TipoDocumentoDto;
 import com.example.inicio.dto.tipoDocumento.TipoDocumentoUpdateDto;
-import com.example.inicio.mapper.GeneroMapper;
 import com.example.inicio.mapper.TipoDocumentoMapper;
-import com.example.inicio.model.Genero;
 import com.example.inicio.model.TipoDocumento;
 import com.example.inicio.repository.TipoDocumentoRepository;
 

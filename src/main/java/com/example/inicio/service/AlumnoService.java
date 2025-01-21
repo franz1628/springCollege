@@ -7,11 +7,8 @@ import org.springframework.stereotype.Service;
 import com.example.inicio.dto.alumno.AlumnoCreateDto;
 import com.example.inicio.dto.alumno.AlumnoDto;
 import com.example.inicio.dto.alumno.AlumnoUpdateDto;
-import com.example.inicio.dto.tipoDocumento.TipoDocumentoDto;
 import com.example.inicio.mapper.AlumnoMapper;
-import com.example.inicio.mapper.TipoDocumentoMapper;
 import com.example.inicio.model.Alumno;
-import com.example.inicio.model.TipoDocumento;
 import com.example.inicio.repository.AlumnoRepository;
 
 @Service

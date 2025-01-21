@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.inicio.dto.ApiResponse;
-import com.example.inicio.dto.genero.GeneroDto;
 import com.example.inicio.dto.tipoDocumento.TipoDocumentoCreateDto;
 import com.example.inicio.dto.tipoDocumento.TipoDocumentoDto;
 import com.example.inicio.dto.tipoDocumento.TipoDocumentoUpdateDto;

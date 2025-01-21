@@ -7,7 +7,6 @@ import com.example.inicio.dto.ApiResponse;
 import com.example.inicio.dto.alumno.AlumnoCreateDto;
 import com.example.inicio.dto.alumno.AlumnoDto;
 import com.example.inicio.dto.alumno.AlumnoUpdateDto;
-import com.example.inicio.dto.tipoDocumento.TipoDocumentoDto;
 import com.example.inicio.service.AlumnoService;
 
 import jakarta.validation.Valid;
