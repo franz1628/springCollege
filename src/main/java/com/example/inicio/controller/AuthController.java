@@ -39,7 +39,12 @@ public class AuthController {
             );
 
             String token = jwtUtil.generateToken(authRequest.getUsername());
-            return ResponseEntity.ok(new AuthResponse(token));
+            return ResponseEntity.ok(new AuthResponse(
+                token,
+                authRequest.getUsername(),
+                "",
+                "ROLE_ADMIN"
+                ));
 
         } catch (AuthenticationException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales inválidas");
