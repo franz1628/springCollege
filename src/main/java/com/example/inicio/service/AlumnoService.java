@@ -1,8 +1,12 @@
 package com.example.inicio.service;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.inicio.dto.alumno.AlumnoCreateDto;
 import com.example.inicio.dto.alumno.AlumnoDto;
@@ -18,6 +22,9 @@ public class AlumnoService {
     private final TipoDocumentoService tipoDocumentoService;
     private final String NOEXISTE  = "No existe ese Alumno";
     private final String SIEXISTE = "ya existe ese Alumno";
+
+    @Value("${file.upload-dir}")
+    private String uploadDir; 
 
     
     AlumnoService(AlumnoRepository repository, GeneroService generoService, TipoDocumentoService tipoDocumentoService){
@@ -71,6 +78,45 @@ public class AlumnoService {
         Alumno newModel = repository.save(AlumnoMapper.INSTANCE.toEntity(model));
         newModel = this.getId(newModel.getId());
         return AlumnoMapper.INSTANCE.toDto(newModel);
+    }
+
+    public boolean upload(int id, MultipartFile file) throws IOException{
+        this.getId(id);
+        
+        if(file.isEmpty()){
+            return false;
+        }
+
+  
+         String original = file.getOriginalFilename();
+         if (original == null || original.isEmpty()) {
+             throw new IOException("El archivo no tiene un nombre válido.");
+         }
+         String extension = "";
+ 
+         int puntoindex = original.lastIndexOf('.');
+         if (puntoindex > 0) {
+             extension = original.substring(puntoindex); 
+         }
+ 
+         String nuevonombre = id + extension;
+
+
+        File destino = new File(uploadDir, nuevonombre);
+
+
+        File uploadD = new File(uploadDir);
+        if (!uploadD.exists()) {
+            boolean created = uploadD.mkdirs();
+            if (!created) {
+                throw new IOException("No se pudo crear el directorio de subida.");
+            }
+        }
+
+        file.transferTo(destino);
+
+        return true;
+
     }
 
     public AlumnoDto delete(int id){

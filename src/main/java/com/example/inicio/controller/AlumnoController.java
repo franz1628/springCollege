@@ -1,7 +1,9 @@
 package com.example.inicio.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.inicio.dto.ApiResponse;
 import com.example.inicio.dto.alumno.AlumnoCreateDto;
@@ -11,6 +13,7 @@ import com.example.inicio.service.AlumnoService;
 
 import jakarta.validation.Valid;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -49,6 +52,11 @@ public class AlumnoController {
     @PutMapping("/{id}")
     public ApiResponse<AlumnoDto> update(@PathVariable int id, @RequestBody AlumnoUpdateDto model) {
         return new ApiResponse<AlumnoDto>(1, "Modificado correctamente", service.update(id,model));
+    }
+
+    @PostMapping("/upload/{id}")
+    public boolean upload(@PathVariable int id,@RequestBody MultipartFile file) throws IOException{
+        return service.upload(id,file);
     }
     
     @DeleteMapping("/{id}")
