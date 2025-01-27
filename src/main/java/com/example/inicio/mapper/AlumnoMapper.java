@@ -15,12 +15,12 @@ public interface AlumnoMapper{
 
     @Mapping(target = "id",ignore = true)
     @Mapping(target = "estado",ignore = true)
-    @Mapping(target = "createdAt",ignore = true)
-    @Mapping(target = "updatedAt",ignore = true)
+    @Mapping(target = "created_at",ignore = true)
+    @Mapping(target = "updated_at",ignore = true)
     Alumno toEntity(AlumnoCreateDto model);
 
-    @Mapping(target = "createdAt",ignore = true)
-    @Mapping(target = "updatedAt",ignore = true)
+    @Mapping(target = "created_at",ignore = true)
+    @Mapping(target = "updated_at",ignore = true)
     Alumno toEntity(AlumnoUpdateDto model);
     Alumno toEntity(AlumnoDto model);
 

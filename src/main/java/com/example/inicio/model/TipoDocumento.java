@@ -26,22 +26,22 @@ public class TipoDocumento {
 
     @CreationTimestamp
     @Column(name = "created_at", insertable = false, updatable = false)
-    LocalDateTime createdAt;
+    LocalDateTime created_at;
     
     @UpdateTimestamp
     @Column(name = "updated_at", insertable = false, updatable = false)
-    LocalDateTime updatedAt;
+    LocalDateTime updated_at;
 
     public TipoDocumento(){
 
     }
 
-    public TipoDocumento(int id, String descripcion, int estado, LocalDateTime createdAt, LocalDateTime updatedAt){
+    public TipoDocumento(int id, String descripcion, int estado, LocalDateTime created_at, LocalDateTime updated_at){
         this.id = id;
         this.descripcion = descripcion;
         this.estado = estado;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
     }
 
     public int getId() {
@@ -68,20 +68,20 @@ public class TipoDocumento {
         this.estado = estado;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public LocalDateTime getCreated_at() {
+        return created_at;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setCreated_at(LocalDateTime created_at) {
+        this.created_at = created_at;
     }
 
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
+    public LocalDateTime getUpdated_at() {
+        return updated_at;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setUpdated_at(LocalDateTime updated_at) {
+        this.updated_at = updated_at;
     }
 
     

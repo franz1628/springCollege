@@ -15,12 +15,12 @@ public interface TipoDocumentoMapper{
 
     @Mapping(target = "id",ignore = true)
     @Mapping(target = "estado",ignore = true)
-    @Mapping(target = "createdAt",ignore = true)
-    @Mapping(target = "updatedAt",ignore = true)
+    @Mapping(target = "created_at",ignore = true)
+    @Mapping(target = "updated_at",ignore = true)
     TipoDocumento toEntity(TipoDocumentoCreateDto model);
 
-    @Mapping(target = "createdAt",ignore = true)
-    @Mapping(target = "updatedAt",ignore = true)
+    @Mapping(target = "created_at",ignore = true)
+    @Mapping(target = "updated_at",ignore = true)
     TipoDocumento toEntity(TipoDocumentoUpdateDto model);
     TipoDocumento toEntity(TipoDocumentoDto model);
 
